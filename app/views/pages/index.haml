@@ -1,6 +1,33 @@
-%h1
-  Cheese Board
-  %small
-    Cheddar on Status Board
+.row
+  .span8.offset2
+    %h1
+      Cheese Board
+      %small
+        Cheddar on Status Board
 
-= link_to "Sign in with Cheddar", user_omniauth_authorize_path(:cheddar)
+.row
+  .span8.offset2
+    %p
+      Simple web app that allows you to show Cheddar task lists
+      on Panic's new Status Board iPad app.
+
+    %p
+      %span.label.label-important WARNING!
+      Signing into this will make ALL of your Cheddar lists public. Even though
+      you still need to know the list id, it is still public and I for one
+      don't think security through obscurity is enough. I'm hoping to implement
+      something better soon, but it is also an issue with Status Board only
+      working with public URLs.
+    %p
+      Alternatively, you can download and run Cheese Board locally to limit
+      exposure to your local network, but this means the table will only render
+      while on the same network.
+
+.row
+  .span8.offset2
+    %p
+      If, and only if, you are alright with the above implications, feel free
+      to sign in below and try it out.
+.row
+  .span8.offset2.text-center
+    = link_to "Sign in with Cheddar", user_omniauth_authorize_path(:cheddar), {class: 'btn btn-primary'}

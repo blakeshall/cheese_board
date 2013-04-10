@@ -7,5 +7,6 @@ class UsersController < ApplicationController
   def list
     @user = User.find(params[:id])
     @tasks = @user.get_tasks(params[:list_id])
+    render layout: false
   end
 end
