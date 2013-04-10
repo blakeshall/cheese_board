@@ -1,14 +1,19 @@
-%h1 Your Lists
-
-%p
-  Add a table to your Status Board and use the list url below as the data url.
-%table
-  %tr
-    %th List Name
-    %th URL
-  - @lists.each do |list|
-    %tr
-      %td
-        = list['title']
-      %td
-        = "#{root_url}users/#{current_user.id}/lists/#{list['id']}"
+.row
+  .span8.offset2
+    %h1 Your Lists
+.row
+  .span8.offset2
+    %p
+      Add a table to your Status Board and use the list url below as the data url.
+.row
+  .span8.offset2
+    %table.table
+      %tr
+        %th List Name
+        %th URL
+      - @lists.each do |list|
+        %tr
+          %td
+            = list['title']
+          %td
+            = "#{root_url}users/#{current_user.id}/lists/#{list['id']}"
