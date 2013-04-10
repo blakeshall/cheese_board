@@ -4,16 +4,43 @@
 .row
   .span8.offset2
     %p
-      Add a table to your Status Board and use the list url below as the data url.
+      Select a list to activate. This will make it publically accesible to
+      anyone with the URL. In Status Board, add a table panel and use the given
+      URL for the data input.
+      Deactivate it to disable the URL, this will break
+      any Status Board table still using that URL.
+
 .row
   .span8.offset2
+    %h2 Activated (Public) lists
+    %table.table
+      %table.table
+        %tr
+          %th List Name
+          %th URL
+          %th Deactivate
+        - @active.each do |list|
+          %tr
+            %td
+              = list.title
+            %td
+              = "#{root_url}users/#{list.id}/lists/#{list.cheddar_list_id}"
+            %td
+              = button_to "Deactivate", {action: 'destroy', controller: 'active_lists',
+                                    id: list.id}, {class: "btn btn-danger"}
+
+.row
+  .span8.offset2
+    %h2 Cheddar Lists
     %table.table
       %tr
         %th List Name
-        %th URL
+        %th
       - @lists.each do |list|
         %tr
           %td
             = list['title']
           %td
-            = "#{root_url}users/#{current_user.id}/lists/#{list['id']}"
+            = button_to "Activate", {action: 'create', controller: 'active_lists',
+                                    cheddar_list_id: list['id'], user_id: current_user.id,
+                                    title: list['title']}, {class: "btn btn-primary"}

@@ -3,6 +3,8 @@ CheeseBoard::Application.routes.draw do
 
   match 'users/:id/lists' => 'users#lists', :as => "lists"
   match 'users/:id/lists/:list_id' => 'users#list', :as => "list"
+  match '/new_list' => 'active_lists#create'
+  match '/destroy_list' => 'active_lists#destroy'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

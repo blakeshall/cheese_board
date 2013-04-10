@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :cheddar_id, :cheddar_username, :cheddar_url, :cheddar_token
   # attr_accessible :title, :body
+  has_many :active_lists
 
   def self.find_for_cheddar_oauth(auth, signed_in_resource=nil)
     user = User.where(:cheddar_id => auth.extra.raw_info.id).first

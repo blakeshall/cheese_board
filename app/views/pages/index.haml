@@ -13,11 +13,8 @@
 
     %p
       %span.label.label-important WARNING!
-      Signing into this will make ALL of your Cheddar lists public. Even though
-      you still need to know the list id, it is still public and I for one
-      don't think security through obscurity is enough. I'm hoping to implement
-      something better soon, but it is also an issue with Status Board only
-      working with public URLs.
+      Any list you choose to activate will become public to anyone with the
+      URL. This is because Status Board will only work with public URLs.
     %p
       Alternatively, you can download and run Cheese Board locally to limit
       exposure to your local network, but this means the table will only render
@@ -27,7 +24,8 @@
   .span8.offset2
     %p
       If, and only if, you are alright with the above implications, feel free
-      to sign in below and try it out.
+      to sign in below and try it out. Status Board refreshes every minute so
+      you won't have to worry about the list becoming outdated.
 .row
   .span8.offset2.text-center
     = link_to "Sign in with Cheddar", user_omniauth_authorize_path(:cheddar), {class: 'btn btn-primary'}
