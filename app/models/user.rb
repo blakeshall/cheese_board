@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -19,5 +22,26 @@ class User < ActiveRecord::Base
                            )
     end
     user
+  end
+
+  def get_lists
+    options = {headers: {'Authorization'=> "Bearer #{cheddar_token}"}}
+    response = HTTParty.get('https://api.cheddarapp.com/v1/lists', options)
+    lists = []
+    response.parsed_response.each do |list|
+      lists.push(list) if list["archived_at"].nil?
+    end
+    return lists
+  end
+
+  def get_tasks(list_id)
+    options = {headers: {'Authorization'=> "Bearer #{cheddar_token}"}}
+    response = HTTParty.get("https://api.cheddarapp.com/v1/lists/#{list_id}/tasks", options)
+    tasks = []
+    puts response.parsed_response
+    response.parsed_response.each do |task|
+      tasks.push(task) if task["archived_at"].nil? & task["completed_at"].nil?
+    end
+    return tasks
   end
 end

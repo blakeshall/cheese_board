@@ -1,6 +1,9 @@
 CheeseBoard::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  match 'users/:id/lists' => 'users#lists', :as => "lists"
+  match 'users/:id/lists/:list_id' => 'users#list', :as => "list"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
