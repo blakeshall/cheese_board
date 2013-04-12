@@ -1,0 +1,66 @@
+[
+  {
+    "active_completed_tasks_count": 9,
+    "active_tasks_count": 4,
+    "active_uncompleted_tasks_count": 0,
+    "archived_at": null,
+    "archived_completed_tasks_count": 5,
+    "archived_tasks_count": 5,
+    "archived_uncompleted_tasks_count": 0,
+    "created_at": "2012-07-30T18:54:18Z",
+    "id": 12344,
+    "position": 0,
+    "slug": "TPR",
+    "title": "A List",
+    "updated_at": "2012-08-24T20:33:15Z",
+    "url": "https://api.cheddarapp.com/v1/lists/12344",
+    "user": {
+      "created_at": "2012-07-30T18:54:18Z",
+      "first_name": null,
+      "has_plus": false,
+      "id": 14310,
+      "last_name": null,
+      "socket": {
+        "api_key": "somestring",
+        "app_id": "12345",
+        "auth_url": "https://api.cheddarapp.com/pusher/auth",
+        "channel": "private-user-123"
+      },
+      "updated_at": "2012-08-22T04:31:44Z",
+      "url": "https://api.cheddarapp.com/v1/users/14310",
+      "username": "johnsmith"
+    }
+  },
+  {
+    "active_completed_tasks_count": 9,
+    "active_tasks_count": 4,
+    "active_uncompleted_tasks_count": 0,
+    "archived_at": null,
+    "archived_completed_tasks_count": 5,
+    "archived_tasks_count": 5,
+    "archived_uncompleted_tasks_count": 0,
+    "created_at": "2012-08-30T18:54:18Z",
+    "id": 12345,
+    "position": 1,
+    "slug": "TPR",
+    "title": "Another List",
+    "updated_at": "2012-08-24T20:33:15Z",
+    "url": "https://api.cheddarapp.com/v1/lists/12345",
+    "user": {
+      "created_at": "2012-07-30T18:54:18Z",
+      "first_name": null,
+      "has_plus": false,
+      "id": 14310,
+      "last_name": null,
+      "socket": {
+        "api_key": "somestring",
+        "app_id": "12345",
+        "auth_url": "https://api.cheddarapp.com/pusher/auth",
+        "channel": "private-user-123"
+      },
+      "updated_at": "2012-08-22T04:31:44Z",
+      "url": "https://api.cheddarapp.com/v1/users/14310",
+      "username": "johnsmith"
+    }
+  }
+]
