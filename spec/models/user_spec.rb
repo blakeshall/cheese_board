@@ -46,7 +46,7 @@ describe User do
 
   it "gets the tasks for a list" do
     user = FactoryGirl.create(:user)
-    tasks = user.get_tasks(12344)
-    expect(tasks.first['text']).to eq('A task')
+    task = user.get_tasks(12344).first
+    expect(task['text']).to eq('A task')
   end
 end

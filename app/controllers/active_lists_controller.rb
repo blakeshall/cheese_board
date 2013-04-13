@@ -7,8 +7,9 @@ class ActiveListsController < ApplicationController
     @list.title = params[:title]
     if @list.user_id != current_user.id
       redirect_to lists_path(current_user)
-    end
-    if @list.save
+    elsif @list.save
+      redirect_to lists_path(current_user)
+    else
       redirect_to lists_path(current_user)
     end
   end

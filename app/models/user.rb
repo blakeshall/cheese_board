@@ -39,7 +39,6 @@ class User < ActiveRecord::Base
     options = {headers: {'Authorization'=> "Bearer #{cheddar_token}"}}
     response = HTTParty.get("https://api.cheddarapp.com/v1/lists/#{list_id}/tasks", options)
     tasks = []
-    puts response.parsed_response
     response.parsed_response.each do |task|
       tasks.push(task) if task["archived_at"].nil? & task["completed_at"].nil?
     end
