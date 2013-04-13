@@ -5,7 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'devise'
 gem 'haml'
 gem 'omniauth'
@@ -13,9 +12,14 @@ gem 'omniauth-cheddar'
 gem 'httparty'
 
 group :test, :development do
+  gem 'sqlite3'
   gem "rspec-rails", "~> 2.0"
   gem "factory_girl_rails", "~> 4.0"
   gem "webmock"
+end
+
+group :production do
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
